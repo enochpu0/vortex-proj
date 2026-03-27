@@ -1,0 +1,34 @@
+{
+  "id": "npc_butler",
+  "name": {
+    "zh": "管家威尔逊",
+    "en": "Butler Wilson"
+  },
+  "role": {
+    "zh": "管家",
+    "en": "Butler"
+  },
+  "background": {
+    "zh": "伺候这个家族已经三代了。忠诚谨慎，但似乎有所保留。",
+    "en": "Has served this family for three generations. Loyal and cautious, but seems to be holding something back."
+  },
+  "personality": {
+    "zh": "恭敬、谨慎、有所保留",
+    "en": "Respectful, cautious, reserved"
+  },
+  "sprite_path": "res://resources/sprites/characters/butler.png",
+  "expressions": {
+    "neutral": "normal",
+    "happy": "polite_smile",
+    "angry": "stern",
+    "surprised": "startled",
+    "confused": "uncertain",
+    "sad": "somber"
+  },
+  "voice_pitch": 0.9,
+  "dialogue_style": {
+    "max_length": 60,
+    "formal": true,
+    "uses_honorifics": true
+  }
+}

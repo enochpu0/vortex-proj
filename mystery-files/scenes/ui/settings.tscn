@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://settings"]
+
+[ext_resource type="Script" path="res://scripts/scenes/settings.gd" id="1_settings"]
+
+[node name="SettingsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_settings")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1.0)
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 70.0
+
+[node name="BackButton" type="Button" parent="Header"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+text = "← 返回"
+
+[node name="TitleLabel" type="Label" parent="Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "设置"
+
+[node name="SettingsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 90.0
+offset_right = -50.0
+offset_bottom = -50.0
+theme_override_constants/separation = 30
+
+[node name="AudioGroup" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="AudioTitle" type="Label" parent="AudioGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🔊 音频"
+
+[node name="BGMLabel" type="Label" parent="AudioGroup"]
+layout_mode = 2
+text = "BGM 音量"
+
+[node name="BGMSlider" type="HSlider" parent="AudioGroup"]
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 10.0
+
+[node name="SFXLabel" type="Label" parent="AudioGroup"]
+layout_mode = 2
+text = "音效音量"
+
+[node name="SFXSlider" type="HSlider" parent="AudioGroup"]
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 10.0
+
+[node name="VoiceGroup" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="VoiceTitle" type="Label" parent="VoiceGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🎤 语音"
+
+[node name="LanguageLabel" type="Label" parent="VoiceGroup"]
+layout_mode = 2
+text = "语音识别语言"
+
+[node name="LanguageSelect" type="OptionButton" parent="VoiceGroup"]
+layout_mode = 2
+
+[node name="DataGroup" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="DataTitle" type="Label" parent="DataGroup"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "💾 数据"
+
+[node name="ClearSaveButton" type="Button" parent="DataGroup"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+text = "清除所有存档"

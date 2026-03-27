@@ -1,0 +1,34 @@
+{
+  "id": "npc_doctor",
+  "name": {
+    "zh": "史密斯医生",
+    "en": "Dr. Smith"
+  },
+  "role": {
+    "zh": "家庭医生",
+    "en": "Family Doctor"
+  },
+  "background": {
+    "zh": "在这所房子里工作了 20 年的家庭医生，知道所有秘密。性格冷静，说话简洁。",
+    "en": "The family doctor who has worked in this house for 20 years. Knows all the secrets. Calm and speaks concisely."
+  },
+  "personality": {
+    "zh": "冷静、专业、话少",
+    "en": "Calm, professional, speaks little"
+  },
+  "sprite_path": "res://resources/sprites/characters/doctor.png",
+  "expressions": {
+    "neutral": "normal",
+    "happy": "smile",
+    "angry": "mad",
+    "surprised": "shock",
+    "confused": "puzzle",
+    "sad": "concerned"
+  },
+  "voice_pitch": 1.0,
+  "dialogue_style": {
+    "max_length": 50,
+    "formal": true,
+    "uses_medical_terms": true
+  }
+}

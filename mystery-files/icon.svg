@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2EC4B6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A9B8E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+
+  <!-- Mystery icon - magnifying glass -->
+  <circle cx="56" cy="56" r="28" fill="none" stroke="url(#accent)" stroke-width="6"/>
+  <line x1="78" y1="78" x2="100" y2="100" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Pixel accent corners -->
+  <rect x="16" y="16" width="8" height="8" fill="#2EC4B6" opacity="0.6"/>
+  <rect x="104" y="16" width="8" height="8" fill="#2EC4B6" opacity="0.6"/>
+  <rect x="16" y="104" width="8" height="8" fill="#2EC4B6" opacity="0.6"/>
+  <rect x="104" y="104" width="8" height="8" fill="#2EC4B6" opacity="0.6"/>
+
+  <!-- Question mark -->
+  <text x="64" y="62" font-family="monospace" font-size="28" fill="#2EC4B6" text-anchor="middle" font-weight="bold">?</text>
+</svg>

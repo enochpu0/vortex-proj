@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://dialogue"]
+
+[ext_resource type="Script" path="res://scripts/components/typewriter_label.gd" id="1_typewriter"]
+[ext_resource type="Script" path="res://scripts/components/sound_wave.gd" id="2_wave"]
+[ext_resource type="Script" path="res://scripts/components/voice_button.gd" id="3_voice"]
+[ext_resource type="Script" path="res://scripts/scenes/dialogue.gd" id="4_dialogue"]
+
+[node name="DialogueScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dialogue")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1.0)
+
+[node name="NPCPortrait" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+stretch_mode = 5
+
+[node name="NPCName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 280.0
+offset_right = 200.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 18
+text = "Dr. Smith"
+
+[node name="DialogueBox" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -150.0
+offset_right = -50.0
+offset_bottom = -80.0
+
+[node name="DialogueText" type="Label" parent="DialogueBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+theme_override_font_sizes/font_size = 16
+script = ExtResource("1_typewriter")
+
+[node name="VoiceButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -70.0
+offset_right = 200.0
+offset_bottom = -20.0
+script = ExtResource("3_voice")
+
+[node name="VoiceButton/Icon" type="TextureRect" parent="VoiceButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="VoiceButton/Label" type="Label" parent="VoiceButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 15.0
+offset_right = -10.0
+offset_bottom = -15.0
+text = "按住说话"
+
+[node name="SoundWave" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 220.0
+offset_top = -70.0
+offset_right = 370.0
+offset_bottom = -20.0
+script = ExtResource("2_wave")

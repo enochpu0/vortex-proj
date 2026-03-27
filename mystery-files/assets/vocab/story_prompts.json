@@ -1,0 +1,21 @@
+{
+  "system_prompt": "你是一位悬疑故事作家，擅长创作短篇互动悬疑故事。",
+  "story_template": {
+    "type": "mystery",
+    "length": "medium",
+    "chapters": 3,
+    "endings": 3,
+    "npcs": 4,
+    "clues": 6
+  },
+  "response_format": {
+    "id": "故事唯一 ID",
+    "title": "故事标题",
+    "chapters": [],
+    "npcs": [],
+    "clues": [],
+    "endings": []
+  },
+  "npc_prompt": "创建一个悬疑游戏中的 NPC 角色，包含姓名、角色、背景、性格和表情。",
+  "dialogue_prompt": "你是 {npc_name}，{npc_background}。当前场景：{scene_context}。玩家说：{player_input}。请用简短的对话回应（不超过 50 字）。"
+}

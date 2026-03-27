@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://archive"]
+
+[ext_resource type="Script" path="res://scripts/scenes/archive.gd" id="1_archive"]
+
+[node name="ArchiveScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_archive")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1.0)
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 70.0
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="Button" parent="Header"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+text = "← 返回"
+
+[node name="TitleLabel" type="Label" parent="Header"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "档案库"
+
+[node name="StatsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 400.0
+offset_bottom = 200.0
+
+[node name="StatsTitle" type="Label" parent="StatsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "📊 玩家统计"
+
+[node name="StatsGrid" type="HBoxContainer" parent="StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CasesLabel" type="Label" parent="StatsGrid"]
+layout_mode = 2
+text = "12 案件"
+
+[node name="CompletedLabel" type="Label" parent="StatsGrid"]
+layout_mode = 2
+text = "5 通关"
+
+[node name="MysteryLabel" type="Label" parent="StatsGrid"]
+layout_mode = 2
+text = "8 悬案"
+
+[node name="HistoryContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 220.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="HistoryList" type="VBoxContainer" parent="HistoryContainer"]
+layout_mode = 2

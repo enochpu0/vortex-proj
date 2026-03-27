@@ -1,0 +1,34 @@
+{
+  "id": "npc_nephew",
+  "name": {
+    "zh": "侄子杰克",
+    "en": "Nephew Jack"
+  },
+  "role": {
+    "zh": "继承人",
+    "en": "Heir"
+  },
+  "background": {
+    "zh": "去世者的侄子，是第一继承人。最近和死者有争执，表现得很焦虑。",
+    "en": "The nephew of the deceased, the first heir. Recently had an argument with the deceased and appears very anxious."
+  },
+  "personality": {
+    "zh": "急躁、防御性强、焦虑",
+    "en": "Impatient, defensive, anxious"
+  },
+  "sprite_path": "res://resources/sprites/characters/nephew.png",
+  "expressions": {
+    "neutral": "normal",
+    "happy": "relieved",
+    "angry": "angry",
+    "surprised": "shocked",
+    "confused": "confused",
+    "sad": "worried"
+  },
+  "voice_pitch": 1.1,
+  "dialogue_style": {
+    "max_length": 40,
+    "formal": false,
+    "emotional": true
+  }
+}

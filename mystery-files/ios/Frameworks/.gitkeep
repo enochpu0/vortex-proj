@@ -1,0 +1,6 @@
+# Place iOS frameworks here
+#
+# This directory is for additional iOS frameworks that may be needed:
+# - ONNX Runtime iOS framework (for local AI inference)
+# - Custom GDNative plugins
+# - Third-party SDKs

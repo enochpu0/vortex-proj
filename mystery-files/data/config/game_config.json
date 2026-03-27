@@ -1,0 +1,13 @@
+{
+  "bgm_volume": 0.0,
+  "sfx_volume": 0.0,
+  "ambient_volume": -5.0,
+  "language": "zh",
+  "voice_enabled": true,
+  "pixel_rendering": true,
+  "dialogue_speed": 1.0,
+  "display": {
+    "fullscreen": false,
+    "vsync": true
+  }
+}
