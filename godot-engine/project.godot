@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="vortex"
+run/main_scene="res://scenes/ui/main_menu.tscn"
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://scripts/autoload/event_bus.gd"
+GameState="*res://scripts/autoload/game_state.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+SaveManager="*res://scripts/autoload/save_manager.gd"
+StoryManager="*res://scripts/autoload/story_manager.gd"
+ClueManager="*res://scripts/autoload/clue_manager.gd"
+NpcManager="*res://scripts/autoload/npc_manager.gd"
+AIService="*res://scripts/autoload/ai_service.gd"
+VoiceService="*res://scripts/autoload/voice_service.gd"
+
+[display]
+
+window/stretch/mode="canvas"
+window/stretch/aspect="expand"
+window/orientation=1
+
+[ios]
+
+privacy/microphone_usage_description="Need microphone access for voice interaction"
+privacy/speech_recognition_usage_description="Need speech recognition for voice input"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
