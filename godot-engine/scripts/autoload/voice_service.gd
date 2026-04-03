@@ -31,11 +31,28 @@ var silence_timeout: float = 2.0
 # Internal state
 var recording_start_time: float = 0
 var silence_timer: float = 0
+var _native_plugin = null
 
 
 func _ready() -> void:
 	print("[VoiceService] Initialized")
+	_initialize_native_plugin()
 	_check_platform_support()
+
+
+func _initialize_native_plugin() -> void:
+	# Try to get iOS Speech plugin if on iOS platform
+	if OS.get_name() == "iOS" or OS.get_name() == "macOS":
+		_native_plugin = Engine.get_singleton("IOSSpeech")
+		if _native_plugin:
+			print("[VoiceService] iOS Speech plugin found, connecting signals...")
+			_native_plugin.connect("transcription_completed", _on_native_transcription_completed)
+			_native_plugin.connect("recording_started", _on_native_recording_started)
+			_native_plugin.connect("recording_stopped", _on_native_recording_stopped)
+			_native_plugin.connect("error_occurred", _on_native_plugin_error)
+			print("[VoiceService] iOS Speech plugin connected successfully")
+		else:
+			print("[VoiceService] iOS Speech plugin not found, using simulation mode")
 
 
 # Check platform support
@@ -107,26 +124,28 @@ func cancel() -> void:
 # ===========================================================
 
 func _start_native_recording() -> void:
-	# This would be implemented via GDNative plugin for iOS Speech Framework
-	# For now, simulate with timer
-
-	print("[VoiceService] Starting native recording (simulated)")
-
-	# Simulate recording duration
-	await get_tree().create_timer(3.0).timeout
-
-	# Simulate result
-	_on_native_recognition_result("这是一个测试识别结果")
+	if _native_plugin:
+		print("[VoiceService] Starting native recording via iOS Speech plugin")
+		_native_plugin.start_recording()
+	else:
+		# Simulation mode for non-iOS platforms
+		print("[VoiceService] Starting native recording (simulated)")
+		await get_tree().create_timer(3.0).timeout
+		_on_native_recognition_result("这是一个测试识别结果")
 
 
 func _stop_native_recording() -> void:
-	# Stop native recording
-	print("[VoiceService] Stopping native recording")
+	if _native_plugin:
+		_native_plugin.stop_recording()
+	else:
+		print("[VoiceService] Stopping native recording")
 
 
 func _cancel_native_recording() -> void:
-	# Cancel native recording
-	print("[VoiceService] Cancelling native recording")
+	if _native_plugin:
+		_native_plugin.cancel_recording()
+	else:
+		print("[VoiceService] Cancelling native recording")
 
 
 # ===========================================================
@@ -135,6 +154,22 @@ func _cancel_native_recording() -> void:
 
 func _on_native_recognition_started() -> void:
 	print("[VoiceService] Native recognition started")
+
+
+func _on_native_transcription_completed(text: String) -> void:
+	_on_native_recognition_result(text)
+
+
+func _on_native_recording_started() -> void:
+	print("[VoiceService] Native recording started signal received")
+
+
+func _on_native_recording_stopped() -> void:
+	print("[VoiceService] Native recording stopped signal received")
+
+
+func _on_native_plugin_error(error: String) -> void:
+	_on_native_recognition_error(error)
 
 
 func _on_native_recognition_result(text: String) -> void:

@@ -4,7 +4,7 @@ extends Control
 # Archive Scene Script
 # ===========================================================
 
-@onready var stats_label: Label = $StatsContainer/StatsGrid
+@onready var stats_label = $StatsContainer/StatsGrid/Label
 @onready var history_list: VBoxContainer = $HistoryContainer/HistoryList
 
 # History data

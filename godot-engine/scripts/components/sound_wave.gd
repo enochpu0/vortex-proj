@@ -12,8 +12,8 @@ class_name SoundWave
 @export var bar_color: Color = Color("#2EC4B6")
 
 # Internal
-var bars: Array[ColorRect] = []
-var amplitudes: Array[float] = []
+var bars: Array = []
+var amplitudes: Array = []
 
 
 func _ready() -> void:
@@ -47,7 +47,9 @@ func _create_bars() -> void:
 		bars.append(bar)
 
 	# Initialize amplitudes
-	amplitudes = [0.2, 0.4, 0.6, 0.4, 0.2].slice(0, bar_count)
+	amplitudes.clear()
+	for i in bar_count:
+		amplitudes.append([0.2, 0.4, 0.6, 0.4, 0.2][i])
 
 
 # Connect to voice service
@@ -59,7 +61,7 @@ func _connect_voice_service() -> void:
 
 
 # Update bar heights based on amplitudes
-func update_amplitudes(new_amplitudes: Array[float]) -> void:
+func update_amplitudes(new_amplitudes: Array) -> void:
 	for i in min(bar_count, new_amplitudes.size()):
 		if is_instance_valid(bars[i]):
 			var height = new_amplitudes[i] * max_height
@@ -95,8 +97,7 @@ func _on_recognition_started() -> void:
 # Stop animation
 func _on_recognition_finished() -> void:
 	# Set all bars to full height briefly
-	var full_amplitudes = [1.0, 1.0, 1.0, 1.0, 1.0].slice(0, bar_count)
-	update_amplitudes(full_amplitudes)
+	update_amplitudes([1.0, 1.0, 1.0, 1.0, 1.0])
 
 	await get_tree().create_timer(0.3).timeout
 	visible = false
@@ -104,8 +105,7 @@ func _on_recognition_finished() -> void:
 
 # Set idle state
 func set_idle() -> void:
-	var idle_amplitudes = [0.2, 0.2, 0.2, 0.2, 0.2].slice(0, bar_count)
-	update_amplitudes(idle_amplitudes)
+	update_amplitudes([0.2, 0.2, 0.2, 0.2, 0.2])
 
 
 # Set error state

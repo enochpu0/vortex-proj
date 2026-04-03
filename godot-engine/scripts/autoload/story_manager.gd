@@ -56,8 +56,28 @@ func generate_new_story() -> void:
 
 # Load story from template (fallback)
 func load_story_from_template() -> void:
+	var template_path = "res://data/story_templates/sample_story.json"
+	if ResourceLoader.exists(template_path):
+		var story_data = _load_json(template_path)
+		if not story_data.is_empty():
+			set_story(story_data)
+			print("[StoryManager] Loaded story template: %s" % template_path)
+			return
+	print("[StoryManager] Template not found, using sample story")
 	var story_data = _create_sample_story()
 	set_story(story_data)
+
+
+func _load_json(path: String) -> Dictionary:
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		return {}
+	var content = file.get_as_text()
+	file.close()
+	var json = JSON.new()
+	if json.parse(content) == OK:
+		return json.get_data()
+	return {}
 
 
 # Set the current story

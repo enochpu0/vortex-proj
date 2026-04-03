@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="vortex"
+config/name="Mystery Files"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[audio]
+
+audio_buses/default_bus_layout="res://resources/audio/audio_bus_layout.tres"
 
 [autoload]
 

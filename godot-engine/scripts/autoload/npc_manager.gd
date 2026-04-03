@@ -68,7 +68,7 @@ func _create_default_npc(npc_id: String) -> Dictionary:
 			"role": "家庭医生",
 			"background": "在这所房子里工作了 20 年的家庭医生，知道所有秘密。",
 			"personality": "冷静、专业、话少",
-			"sprite_path": "res://resources/sprites/characters/doctor.png",
+			"sprite_path": "res://resources/sprites/characters/npc_doctor.png",
 			"expressions": {
 				"neutral": "normal",
 				"happy": "smile",
@@ -84,7 +84,7 @@ func _create_default_npc(npc_id: String) -> Dictionary:
 			"role": "管家",
 			"background": "忠诚的管家，伺候这个家族已经三代了。",
 			"personality": "恭敬、谨慎、有所保留",
-			"sprite_path": "res://resources/sprites/characters/butler.png",
+			"sprite_path": "res://resources/sprites/characters/npc_butler.png",
 			"expressions": {
 				"neutral": "normal",
 				"happy": "polite_smile",
@@ -100,7 +100,7 @@ func _create_default_npc(npc_id: String) -> Dictionary:
 			"role": "继承人",
 			"background": "去世者的侄子，是第一继承人，但最近和死者有争执。",
 			"personality": "急躁、防御性强、焦虑",
-			"sprite_path": "res://resources/sprites/characters/nephew.png",
+			"sprite_path": "res://resources/sprites/characters/npc_nephew.png",
 			"expressions": {
 				"neutral": "normal",
 				"happy": "relieved",

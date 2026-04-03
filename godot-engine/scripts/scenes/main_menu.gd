@@ -47,7 +47,7 @@ func _setup_styles() -> void:
 
 # Connect button signals
 func _connect_buttons() -> void:
-	continue_button.pressed.connect(_on_new_game_pressed)
+	continue_button.pressed.connect(_on_continue_pressed)
 	new_game_button.pressed.connect(_on_new_game_pressed)
 	archive_button.pressed.connect(_on_archive_pressed)
 	settings_button.pressed.connect(_on_settings_pressed)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://main_menu"]
+[gd_scene format=3 uid="uid://dlilsevhtuass"]
 
-[ext_resource type="Script" path="res://scripts/scenes/main_menu.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bx2ls2os13ctx" path="res://scripts/scenes/main_menu.gd" id="1_main"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=753801132]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,14 +11,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_main")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1172805556]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.05, 0.05, 0.1, 1.0)
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=387338143]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,30 +31,32 @@ offset_left = -150.0
 offset_top = -100.0
 offset_right = 150.0
 offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1666548485]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "MYSTERY FILES"
+text = "VORTEX"
 horizontal_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1106696518]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "继续案件"
 
-[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer" unique_id=2081106456]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "新案件"
 
-[node name="ArchiveButton" type="Button" parent="VBoxContainer"]
+[node name="ArchiveButton" type="Button" parent="VBoxContainer" unique_id=1155825507]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "档案库"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=792029079]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "设置"

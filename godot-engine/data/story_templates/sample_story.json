@@ -16,6 +16,7 @@
       "id": "chapter_1",
       "title": {"zh": "第一夜", "en": "The First Night"},
       "scenes": ["study", "living_room", "hallway"],
+      "scene_bg": "res://resources/sprites/scenes/scene_mansion.png",
       "description": {
         "zh": "你被叫到这座古老的宅邸。一位富有的老人被发现死在书房里。",
         "en": "You are called to the old mansion. A wealthy elderly man has been found dead in his study."
@@ -25,6 +26,7 @@
       "id": "chapter_2",
       "title": {"zh": "嫌疑人", "en": "The Suspects"},
       "scenes": ["office", "garden", "kitchen"],
+      "scene_bg": "res://resources/sprites/scenes/scene_office.png",
       "description": {
         "zh": "你开始调查，发现有三个嫌疑人：医生、管家和侄子。",
         "en": "You begin your investigation and discover three suspects: the doctor, the butler, and the nephew."
@@ -34,6 +36,7 @@
       "id": "chapter_3",
       "title": {"zh": "真相", "en": "The Truth"},
       "scenes": ["study", "mansion_exterior"],
+      "scene_bg": "res://resources/sprites/scenes/scene_mansion.png",
       "description": {
         "zh": "所有线索都指向一个令人震惊的真相。",
         "en": "All clues point to a shocking truth."
@@ -45,6 +48,7 @@
       "id": "npc_doctor",
       "name": {"zh": "史密斯医生", "en": "Dr. Smith"},
       "role": {"zh": "家庭医生", "en": "Family Doctor"},
+      "sprite": "res://resources/sprites/characters/npc_doctor.png",
       "background": {
         "zh": "在这所房子里工作了 20 年的家庭医生。",
         "en": "The family doctor who has worked in this house for 20 years."
@@ -52,12 +56,18 @@
       "personality": {
         "zh": "冷静、专业、话少",
         "en": "Calm, professional, speaks little"
+      },
+      "expressions": {
+        "normal": "neutral",
+        "suspicious": "concerned",
+        "defensive": "serious"
       }
     },
     {
       "id": "npc_butler",
       "name": {"zh": "管家威尔逊", "en": "Butler Wilson"},
       "role": {"zh": "管家", "en": "Butler"},
+      "sprite": "res://resources/sprites/characters/npc_butler.png",
       "background": {
         "zh": "伺候这个家族已经三代了。",
         "en": "Has served this family for three generations."
@@ -65,12 +75,18 @@
       "personality": {
         "zh": "恭敬、谨慎、有所保留",
         "en": "Respectful, cautious, reserved"
+      },
+      "expressions": {
+        "normal": "respectful",
+        "suspicious": "worried",
+        "defensive": "guarded"
       }
     },
     {
       "id": "npc_nephew",
       "name": {"zh": "侄子杰克", "en": "Nephew Jack"},
       "role": {"zh": "继承人", "en": "Heir"},
+      "sprite": "res://resources/sprites/characters/npc_nephew.png",
       "background": {
         "zh": "去世者的侄子，是第一继承人。",
         "en": "The nephew of the deceased, the first heir."
@@ -78,6 +94,11 @@
       "personality": {
         "zh": "急躁、防御性强、焦虑",
         "en": "Impatient, defensive, anxious"
+      },
+      "expressions": {
+        "normal": "nervous",
+        "suspicious": "agitated",
+        "defensive": "angry"
       }
     }
   ],
@@ -89,8 +110,11 @@
         "zh": "在书房地上发现的一张信纸，上面有血迹。",
         "en": "A letter found on the study floor, stained with blood."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "study",
-      "importance": 5
+      "type": "testimonial",
+      "importance": 5,
+      "related_npcs": ["npc_nephew"]
     },
     {
       "id": "clue_watch",
@@ -99,8 +123,11 @@
         "zh": "一块停在三点的怀表。",
         "en": "A pocket watch stopped at 3 o'clock."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "living_room",
-      "importance": 4
+      "type": "physical",
+      "importance": 4,
+      "related_npcs": ["npc_butler"]
     },
     {
       "id": "clue_photo",
@@ -109,8 +136,11 @@
         "zh": "一张二十年前的家族合影。",
         "en": "A family photo from twenty years ago."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "office",
-      "importance": 3
+      "type": "documentary",
+      "importance": 3,
+      "related_npcs": ["npc_doctor"]
     },
     {
       "id": "clue_medicine",
@@ -119,8 +149,11 @@
         "zh": "一个空的药瓶，标签被撕掉了。",
         "en": "An empty medicine bottle with the label torn off."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "study",
-      "importance": 5
+      "type": "physical",
+      "importance": 5,
+      "related_npcs": ["npc_doctor"]
     },
     {
       "id": "clue_key",
@@ -129,8 +162,11 @@
         "zh": "一把不知道开哪里的钥匙。",
         "en": "A key that doesn't seem to open anything obvious."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "hallway",
-      "importance": 3
+      "type": "physical",
+      "importance": 3,
+      "related_npcs": ["npc_butler"]
     },
     {
       "id": "clue_diary",
@@ -139,8 +175,11 @@
         "zh": "记录着死者生前最后日子的日记。",
         "en": "Diary entries from the victim's final days."
       },
+      "sprite": "res://resources/sprites/items/placeholder_item.png",
       "location": "study",
-      "importance": 5
+      "type": "documentary",
+      "importance": 5,
+      "related_npcs": ["npc_nephew", "npc_doctor"]
     }
   ],
   "endings": [

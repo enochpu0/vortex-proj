@@ -55,7 +55,7 @@ func _initialize_dialogue() -> void:
 
 # Load NPC data
 func _load_npc(npc_id: String) -> void:
-	var npc_data = NPCManager.load_npc(npc_id)
+	var npc_data = NpcManager.load_npc(npc_id)
 	npc_name.text = npc_data.get("name", "Unknown")
 
 	# Load portrait
@@ -110,7 +110,7 @@ func _get_npc_response(player_input: String) -> void:
 	if voice_button:
 		voice_button.disabled = true
 
-	var response = await NPCManager.get_npc_response(current_npc_id, player_input)
+	var response = await NpcManager.get_npc_response(current_npc_id, player_input)
 
 	# Record dialogue
 	StoryManager.record_dialogue(current_npc_id, player_input, response)
